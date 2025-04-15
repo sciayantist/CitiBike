@@ -205,7 +205,7 @@ elif page == 'Interactive Map with Aggregated Bike Trips':
     st.write("Interactive Map Displaying Aggregated Bike Trips Across New York City")
 
     #Assign the file to the variable
-    path_to_html = "NewYork_CitiBike_Trips_Aggregated.html" 
+    path_to_html = "NewYork_CitiBike_Trips_Aggregated.html.zip" 
 
     #Read the map/file and keep in variable
     with open(path_to_html,'r') as f: 
