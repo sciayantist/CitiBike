@@ -9,6 +9,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
+import zipfile
 from plotly.subplots import make_subplots
 from streamlit_keplergl import keplergl_static
 from keplergl import KeplerGl
@@ -203,13 +204,15 @@ elif page == 'Interactive Map with Aggregated Bike Trips':
 ##############################
 
     st.write("Interactive Map Displaying Aggregated Bike Trips Across New York City")
-
-    #Assign the file to the variable
-    path_to_html = "NewYork_CitiBike_Trips_Aggregated.html.zip" 
+    
+  #Assign the file to the variable
+    zip_path = "NewYork_CitiBike_Trips_Aggregated.html.zip"
+    html_filename_in_zip = "NewYork_CitiBike_Trips_Aggregated.html"
 
     #Read the map/file and keep in variable
-    with open(path_to_html,'r') as f: 
-        html_data = f.read()
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        with zip_ref.open(html_filename_in_zip) as f:
+            html_data = f.read().decode("utf-8")   # Read bytes and decode to string
 
     #Add a header and render the map on the dashboard **Show in Webpage**
     st.header("Aggregated CitiBike Trips")
