@@ -7,4 +7,5 @@ streamlit
 keplergl
 numerize
 pillow
+streamlit_keplergl
 
