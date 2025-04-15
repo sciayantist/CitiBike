@@ -36,7 +36,7 @@ page = st.sidebar.selectbox('Select a Section of the Analysis',
 ########################## Import data ###########################################################################################
 
 #The selected reduced columns dataset
-df = pd.read_csv('reduced_data_to_plot.csv', index_col = 0)
+df = pd.read_csv('rand_reduced_data_for_plot.csv', index_col = 0)
 
 #The top 20 stations dataset
 top_20 = pd.read_csv('top20.csv',index_col = 0)
