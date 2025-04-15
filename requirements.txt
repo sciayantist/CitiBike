@@ -3,7 +3,6 @@ numpy
 matplotlib
 plotly
 requests
-json
 streamlit
 keplergl
 numerize
