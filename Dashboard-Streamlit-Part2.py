@@ -110,7 +110,7 @@ elif page == 'Bike Usage and Weather':
     st.markdown("* There is a correlation between temperature changes and daily bike trip frequency.")
     st.markdown("* As temperature rises, bike usage increases, peaking between May and September.")
     st.markdown("* Conversely, during the colder months, usage decreases, with the lowest levels in January and February.")
-    st.markdown("* This insight suggests that the shortage may primarily occur in the warmer months, roughly from May to October.")
+    st.markdown("* This insight suggests that bike shortage may primarily occur in the warmer months, roughly from May to October.")
 
 ########################################################################################################################################################################################################################################################################################################
 
@@ -183,14 +183,17 @@ default=df['season'].unique())  #more than one season can be selected simultaneo
 
     #Add Markdown Text
     st.markdown("* The bar chart shows that certain start stations are more popular than others.")
-    st.markdown("* The top four stations: Grove St Path, South Waterfront Walkway, Hoboken Terminal (River St & Hudson Pl) and Hoboken Terminal (Hudson St & Hudson Pl) —lead in popularity.")
-    st.markdown("* Notably, the top stations have a markedly higher number of trips compared to others. The significant difference between the highest and lowest bars indicates a strong preference for these key stations.")
-    st.markdown("* This suggests that bike unavailability is more likely at these locations due to insufficient supply at these stations.")
+    st.markdown("* The top four popular stations are:")
+    st.markdown("- Grove St Path,")
+    st.markdown("- South Waterfront Walkway,")
+    st.markdown("- Hoboken Terminal - River St & Hudson Pl, and")
+    st.markdown("- Hoboken Terminal - Hudson St & Hudson Pl")
+    st.markdown("* Notably, the top stations have a significantly higher number of trips compared to others. The considerable gap between the highest and lowest bars highlights a strong preference for these key stations.")
+    st.markdown("* This indicates that bikes are more likely to be unavailable at these stations because of insufficient supply.")
     st.markdown("* This observation can be cross-referenced with the interactive map accessible via the sidebar select box.")
 
 
 ########################################################################################################################################################################################################################################################################################################
-
 
 ###################################################
 ###################################################
@@ -202,31 +205,39 @@ elif page == 'Interactive Map with Aggregated Bike Trips':
 ##############################
 ###### Create the Map ########
 ##############################
-
+#import zipfile
     st.write("Interactive Map Displaying Aggregated Bike Trips Across New York City")
-    
-  #Assign the file to the variable
+
     zip_path = "NewYork_CitiBike_Trips_Aggregated.html.zip"
     html_filename_in_zip = "NewYork_CitiBike_Trips_Aggregated.html"
 
-    #Read the map/file and keep in variable
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         with zip_ref.open(html_filename_in_zip) as f:
             html_data = f.read().decode("utf-8")   # Read bytes and decode to string
+ 
+    #Assign the file to the variable
+    #path_to_html = "NewYork_CitiBike_Trips_Aggregated.html.zip" 
 
+    #Read the map/file and keep in variable
+    #with open(path_to_html,'r') as f: 
+     #   html_data = f.read()
+    
     #Add a header and render the map on the dashboard **Show in Webpage**
     st.header("Aggregated CitiBike Trips")
     st.components.v1.html(html_data,height=1000)
 
     #Add Markdown Text
     st.markdown("With the filter on the left side of the map, we can check if the most popular start stations are also among the top frequented trips.")
+    st.markdown("The most popular route, with 999K trips, is from Marshall St & 2 St to City Hall station (Washington St & 1 St") 
+    st.markdown("Other frequently traveled routes, with over 990K trips, include those along the waterfront:")
+    st.markdown("Newport Pkwy to Washington S, and ")
+    st.markdown("Newport Path to Warren St")
     st.markdown("The most popular start stations are:")
     st.markdown("* Grove St Path, South Waterfront Walkway, and Hoboken Terminal (River St/Hudson Pl and Hudson St/Hudson Pl.")
     st.markdown("* With the aggregated bike trips filter enabled for Grove St Path, South Waterfront Walkway, and Hoboken Terminal (River St/Hudson Pl and Hudson St/Hudson Pl), the following observations can be made:")
     st.markdown("A. Trips from Grove St Path and Hoboken Terminal (Hudson St & Hudson Pl) are within New Jersey and don't include trips in New York City.")
     st.markdown("B. Most trips from South Waterfront Walkway (Sinatra Dr & 1 St) and Hoboken Terminal (River St & Hudson Pl) are also within New Jersey, with a few extending into New York City.")
-    st.markdown("C. No trips start in New York, but many end there.")
-    st.markdown("D. The most popular route, with 999K trips, is from Marshall St & 2 St to City Hall station (Washington St & 1 St). Other common routes, with over 990K trips, include Newport Pkwy to Washington St and Newport Path to Warren St, primarily along the waterfront.")
+    st.markdown("C. No trips begin in New York, though many end there, due to the limitations of the original dataset provided for this project.")
 
 
 ########################################################################################################################################################################################################################################################################################################
@@ -236,8 +247,7 @@ elif page == 'Interactive Map with Aggregated Bike Trips':
 ### Recommendations Page ###
 ###################################################
 
-else:
-    
+else:    
     st.header("Conclusions and Recommendations")
     
     #Add an image     
