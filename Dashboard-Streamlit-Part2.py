@@ -182,15 +182,15 @@ default=df['season'].unique())  #more than one season can be selected simultaneo
     st.plotly_chart(fig, use_container_width=True)
 
     #Add Markdown Text
-    st.markdown("* The bar chart shows that certain start stations are more popular than others.")
-    st.markdown("* The top four popular stations are:")
-    st.markdown("- Grove St Path,")
-    st.markdown("- South Waterfront Walkway,")
-    st.markdown("- Hoboken Terminal - River St & Hudson Pl, and")
-    st.markdown("- Hoboken Terminal - Hudson St & Hudson Pl")
-    st.markdown("* Notably, the top stations have a significantly higher number of trips compared to others. The considerable gap between the highest and lowest bars highlights a strong preference for these key stations.")
-    st.markdown("* This indicates that bikes are more likely to be unavailable at these stations because of insufficient supply.")
-    st.markdown("* This observation can be cross-referenced with the interactive map accessible via the sidebar select box.")
+    st.markdown("The bar chart shows that certain start stations are more popular than others.")
+    st.markdown("The top four popular stations are:")
+    st.markdown("* Grove St Path")
+    st.markdown("* South Waterfront Walkway")
+    st.markdown("* Hoboken Terminal - River St & Hudson Pl")
+    st.markdown("* Hoboken Terminal - Hudson St & Hudson Pl")
+    st.markdown("-- Notably, the top stations have a significantly higher number of trips compared to others. The considerable gap between the highest and lowest bars highlights a strong preference for these key stations.")
+    st.markdown("-- This indicates that bikes are more likely to be unavailable at these stations because of insufficient supply.")
+    st.markdown("-- This observation can be cross-referenced with the interactive map accessible via the sidebar select box.")
 
 
 ########################################################################################################################################################################################################################################################################################################
@@ -228,16 +228,16 @@ elif page == 'Interactive Map with Aggregated Bike Trips':
 
     #Add Markdown Text
     st.markdown("With the filter on the left side of the map, we can check if the most popular start stations are also among the top frequented trips.")
-    st.markdown("The most popular route, with 999K trips, is from Marshall St & 2 St to City Hall station (Washington St & 1 St") 
+    st.markdown("The most popular route, with 999K trips, is from Marshall St & 2 St to City Hall station (Washington St & 1 St).") 
     st.markdown("Other frequently traveled routes, with over 990K trips, include those along the waterfront:")
-    st.markdown("Newport Pkwy to Washington S, and ")
-    st.markdown("Newport Path to Warren St")
-    st.markdown("The most popular start stations are:")
+    st.markdown("* Newport Pkwy to Washington S")
+    st.markdown("* Newport Path to Warren St")
+    st.markdown(" The most popular start stations are:")
     st.markdown("* Grove St Path, South Waterfront Walkway, and Hoboken Terminal (River St/Hudson Pl and Hudson St/Hudson Pl.")
     st.markdown("* With the aggregated bike trips filter enabled for Grove St Path, South Waterfront Walkway, and Hoboken Terminal (River St/Hudson Pl and Hudson St/Hudson Pl), the following observations can be made:")
-    st.markdown("A. Trips from Grove St Path and Hoboken Terminal (Hudson St & Hudson Pl) are within New Jersey and don't include trips in New York City.")
-    st.markdown("B. Most trips from South Waterfront Walkway (Sinatra Dr & 1 St) and Hoboken Terminal (River St & Hudson Pl) are also within New Jersey, with a few extending into New York City.")
-    st.markdown("C. No trips begin in New York, though many end there, due to the limitations of the original dataset provided for this project.")
+    st.markdown("-- Trips from Grove St Path and Hoboken Terminal (Hudson St & Hudson Pl) are within New Jersey and don't include trips in New York City.")
+    st.markdown("-- Most trips from South Waterfront Walkway (Sinatra Dr & 1 St) and Hoboken Terminal (River St & Hudson Pl) are also within New Jersey, with a few extending into New York City.")
+    st.markdown("-- No trips begin in New York, though many end there, due to the limitations of the original dataset provided for this project.")
 
 
 ########################################################################################################################################################################################################################################################################################################
@@ -257,9 +257,9 @@ else:
     #Add Markdown Text
     st.markdown("##### Our analysis suggests that New York CitiBikes should prioritize the following objectives to tackle challenges at specific stations and fulfill customer needs:")
     st.markdown("* Expanding and increasing the number of stations along the waterfronts of New Jersey and New York can help resolve the current bike distribution issues.")
-    st.markdown("*  Specifically, it is strongly recommended to expand the stations at Marshall/City Hall, Newport Pkwy/Washington, and Newport Pkwy/Newport Path to Warren St, as these high-demand locations frequently face shortages at the start and challenges with bike returns at the end stations.")
+    st.markdown("* Specifically, it is strongly recommended to expand the stations at Marshall/City Hall, Newport Pkwy/Washington, and Newport Pkwy/Newport Path to Warren St, as these high-demand locations frequently face shortages at the start and challenges with bike returns at the end stations.")
     st.markdown("* Increase the number of stations in the Hoboken area, especially near the Hoboken train station and the Holland Tunnel on the New Jersey side. Additionally, add more stations on the New York side near City Hall, close to the Brooklyn Bridge.")
-    st.markdown("*  Additional stations are also recommended along the New Jersey waterfront, from Liberty State Park to the Lincoln Tunnel.")
+    st.markdown("* Additional stations are also recommended along the New Jersey waterfront, from Liberty State Park to the Lincoln Tunnel.")
     st.markdown("* It's crucial to reallocate resources from less popular stations to areas with higher demand. During warmer months, ensure popular stations are fully stocked to meet increased demand, and consider reducing supply in colder months at less popular locations to minimize logistical costs.")
     st.markdown("* By focusing on these key New York CitiBike stations, we can alleviate distribution challenges, improve bike availability, and better meet customer needs and demands.")
     st.markdown("**Note:** The final steps of the analysis display a random sample comprising 8% of the dataset. This is done to facilitate easier data manipulation and accommodate resource limitations.")
